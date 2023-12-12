@@ -64,7 +64,7 @@ cat ~/workspace/eval_trace/cs_edges/randcs_16_1.edges
 ### リンク設定
 - 設定ファイル: link_config.yaml
   - ホスト-ルータ間 (HR), ルータ-ルータ間 (RR), サーキット接続されたルータ-ルータ間 (cs) それぞれについて、
-  - 帯域 (bw [Bps]), 遅延 (lat [us]) を設定
+  - 帯域 (bw [MBps]), 遅延 (lat [us]) を設定
 
 ```
 cat ~/workspace/eval_trace/link_config.yaml
