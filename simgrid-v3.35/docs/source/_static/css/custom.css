@@ -1,0 +1,22 @@
+object#TOC {
+    max-width: 100%;
+}
+
+div[itemprop="articleBody"] {
+    word-wrap: break-word;
+}
+ul.compact-list {
+    line-height: 80%;
+    margin-left: 2em;
+    padding: 0.2em;
+    margin-bottom: 1em;
+}
+ul.compact-list li {
+    list-style: disc;
+}
+ul.compact-list li p {
+    margin-bottom: 0;
+}
+p.compact-list {
+    margin-bottom: 0;
+}

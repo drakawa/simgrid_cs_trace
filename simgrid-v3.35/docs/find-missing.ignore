@@ -1,0 +1,39 @@
+This file lists the symbols ignored in the documentation.
+It follows the RST syntax but is completely ignored by sphinx.
+It is only used by find-missing, that will not report any definition linked here as missing.
+
+# This is a bug in find-missing, as these symbols are actually documented
+.. doxygenTODOfunction:: simgrid::s4u::Host::route_to(const Host *dest, std::vector< Link * > &links, double *latency)
+.. doxygenTODOfunction:: simgrid::s4u::Host::route_to(const Host *dest, std::vector< kernel::resource::LinkImpl * > &links, double *latency)
+
+.. doxygenTODOfunction:: simgrid::s4u::Engine::register_default(const kernel::actor::ActorCodeFactory &factory)
+.. doxygenTODOfunction:: simgrid::s4u::Engine::register_function(const std::string &name, const kernel::actor::ActorCodeFactory &factory)
+
+# These should not be public
+.. doxygenfunction:: simgrid::s4u::Link::get_impl()
+.. doxygenfunction:: simgrid::s4u::NetZone::get_impl()
+.. doxygenfunction:: simgrid::s4u::VirtualMachine::get_vm_impl()
+.. doxygenfunction:: simgrid::s4u::Activity::get_impl()
+.. doxygenfunction:: simgrid::s4u::Comm::~Comm()
+.. doxygenfunction:: simgrid::s4u::Exec::~Exec()
+.. doxygenfunction:: simgrid::s4u::Io::~Io()
+
+# These are used to make the C++ objects visible from the C world
+.. doxygentypedef:: s4u_Actor
+.. doxygentypedef:: s4u_ActivitySet
+.. doxygentypedef:: s4u_Barrier
+.. doxygentypedef:: s4u_Comm
+.. doxygentypedef:: s4u_ConditionVariable
+.. doxygentypedef:: s4u_Disk
+.. doxygentypedef:: s4u_Exec
+.. doxygentypedef:: s4u_File
+.. doxygentypedef:: s4u_Host
+.. doxygentypedef:: s4u_Link
+.. doxygentypedef:: s4u_Mailbox
+.. doxygentypedef:: s4u_Mutex
+.. doxygentypedef:: s4u_NetZone
+.. doxygentypedef:: s4u_Semaphore
+.. doxygentypedef:: s4u_VM
+.. doxygentypedef:: s4u_Activity
+.. doxygentypedef:: s4u_ActivitySet
+.. doxygentypedef:: s4u_MessageQueue

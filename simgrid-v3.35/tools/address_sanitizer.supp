@@ -1,0 +1,40 @@
+# Address sanitizer suppressions for stuff that we cannot control
+
+# __gnu_cxx::__to_xstring
+#interceptor_via_fun:__to_xstring
+
+# for gcc-11
+interceptor_via_fun:__cxa_demangle
+interceptor_via_fun:__interceptor_sigaltstack
+
+# The following odr violations are reported by gcc-10. Alternatively these
+# warnings may be hidden with "ASAN_OPTIONS=detect_odr_violation=1".
+
+# size=8 'data' /usr/include/boost/type_traits/integral_constant.hpp:82:28
+odr_violation:^data$
+# size=8 'pdata' /usr/include/boost/type_traits/integral_constant.hpp:83:29
+odr_violation:^pdata$
+
+# size=16 '__tag' /usr/include/c++/10/bits/shared_ptr_base.h:510:48
+odr_violation:^__tag$
+
+# size=16 'stored_vtable' /usr/include/boost/function/function_template.hpp:933:32
+odr_violation:^stored_vtable$
+
+# size=40 'cfg_bmf_max_iteration' ../src/kernel/lmm/bmf.hpp:77:44
+odr_violation:^cfg_bmf_max_iteration$
+# size=40 'cfg_bmf_precision' ../src/kernel/lmm/bmf.hpp:80:47
+odr_violation:^cfg_bmf_precision$
+
+# size=56 'on_completion' ../include/simgrid/s4u/Activity.hpp:235:55
+odr_violation:^on_completion$
+# size=56 'on_veto' ../include/simgrid/s4u/Activity.hpp:236:49
+odr_violation:^on_veto$
+# size=56 'on_suspend' ../include/simgrid/s4u/Activity.hpp:237:55
+odr_violation:^on_suspend$
+# size=56 'on_resume' ../include/simgrid/s4u/Activity.hpp:238:55
+odr_violation:^on_resume$
+
+# size=56 'on_start' ../include/simgrid/s4u/Comm.hpp:45:48
+# size=56 'on_start' ../include/simgrid/s4u/Exec.hpp:45:48
+odr_violation:^on_start$

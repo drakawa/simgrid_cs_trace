@@ -1,0 +1,2 @@
+$ ${bindir:=.}/context-defaults
+> [ker_context/VERBOSE] Activating thread context factory

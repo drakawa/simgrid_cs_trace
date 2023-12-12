@@ -1,0 +1,10 @@
+HR:
+ bw: 200
+ lat: 50
+RR:
+ bw: 100
+ lat: 50
+cs:
+ bw: 100
+ lat: 50
+ 

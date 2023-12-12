@@ -1,0 +1,73 @@
+# What to read
+INPUT                  = ../../include/simgrid/forward.h
+INPUT                 += ../../include/simgrid/plugins/
+INPUT                 += ../../include/simgrid/s4u/
+INPUT                 += ../../include/simgrid/actor.h
+INPUT                 += ../../include/simgrid/activity_set.h
+INPUT                 += ../../src/s4u/s4u_Actor.cpp
+INPUT                 += ../../include/simgrid/barrier.h
+INPUT                 += ../../include/simgrid/comm.h
+INPUT                 += ../../include/simgrid/cond.h
+INPUT                 += ../../include/simgrid/engine.h
+INPUT                 += ../../include/simgrid/exec.h
+INPUT                 += ../../include/simgrid/Exception.hpp
+INPUT                 += ../../include/simgrid/host.h
+INPUT                 += ../../src/s4u/s4u_Host.cpp
+#INPUT                 += ../../include/simgrid/instr.h
+INPUT                 += ../../include/simgrid/link.h
+INPUT                 += ../../include/simgrid/mailbox.h
+INPUT                 += ../../include/simgrid/mutex.h
+INPUT                 += ../../include/simgrid/semaphore.h
+INPUT                 += ../../include/simgrid/vm.h
+INPUT                 += ../../include/simgrid/zone.h
+INPUT                 += ../../include/smpi/smpi.h
+INPUT                 += ../../include/xbt/function_types.h
+INPUT                 += ../../include/xbt/dynar.h
+INPUT                 += ../../src/xbt/dynar.cpp
+INPUT                 += ../../include/xbt/signal.hpp
+INPUT                 += ../../src/plugins/
+RECURSIVE              = YES
+
+EXAMPLE_PATH           = ../../examples
+
+# What to produce
+OUTPUT_DIRECTORY       = ../build/
+GENERATE_XML           = YES
+GENERATE_HTML          = NO
+GENERATE_LATEX         = NO
+
+FULL_PATH_NAMES        = NO # Don't leak the path on which it was built
+XML_PROGRAMLISTING     = NO # No program listings, please
+CREATE_SUBDIRS         = NO # Mandatory for exhale
+AUTOLINK_SUPPORT       = NO # Don't try to link words that correspond to documented classes to their corresponding doc
+INLINE_INHERITED_MEMB  = YES # Put the content of superclasses in subclasses
+
+# Allow for rst directives and advanced functions e.g. grid tables
+ALIASES                = "beginrst=\verbatim embed:rst:leading-asterisk"
+ALIASES               += "endrst=\endverbatim"
+
+# Enable preprocessing and related preprocessor necessities
+ENABLE_PREPROCESSING   = YES
+MACRO_EXPANSION        = YES
+EXPAND_ONLY_PREDEF     = NO
+SKIP_FUNCTION_MACROS   = NO
+
+QUIET=YES
+
+PREDEFINED             += \
+    __cplusplus \
+    DOXYGEN \
+    SG_BEGIN_DECL= \
+    SG_END_DECL= \
+    SIMGRID_REGISTER_PLUGIN(id,desc,init)= \
+    XBT_PUBLIC= \
+    XBT_PUBLIC_DATA=extern \
+    XBT_PRIVATE= \
+    XBT_ALWAYS_INLINE= \
+    XBT_ATTRIB_NOINLINE= \
+    XBT_ATTRIB_NORETURN= \
+    XBT_ATTRIB_UNUSED= \
+    XBT_LOG_NEW_DEFAULT_SUBCATEGORY(cname,parent,desc)= \
+    XBT_ATTRIB_DEPRECATED_v336(mesg)= \
+    XBT_ATTRIB_DEPRECATED_v338(mesg)= \
+    XBT_ATTRIB_DEPRECATED_v339(mesg)=
